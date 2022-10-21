@@ -23,6 +23,10 @@ input{
   width: 200px;
 }
 
+#logo{
+  margin-bottom: 2rem;
+}
+
 .container{
   background: #ffffff;
   box-sizing: border-box;
@@ -31,7 +35,10 @@ input{
   margin-top: 5%;
   margin-bottom: 0;
   padding-top: 2rem;
+  padding-left: 15px;
+  padding-right: 15px;
   box-shadow: 5px 5px 5px 5px rgb(195, 191, 191, 0.8);
+  text-align: center;
 }
 
 .boxInputs{
@@ -61,12 +68,15 @@ input{
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
+  text-align: left;
 }
 
 .boxSenha{
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
+  text-align: left;
+
 }
 
 .boxOptions{
@@ -84,3 +94,5 @@ input{
   color: #a39c9c;
   text-decoration: underline;
 }
+
+ 
