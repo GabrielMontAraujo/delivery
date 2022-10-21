@@ -1,0 +1,32 @@
+.container{
+  align-items: center;
+  background:-moz-linear-gradient(45deg, hsl(0, 2%, 90%), hsl(0, 7%, 92%));
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  justify-content: center;
+  max-width: 360px;
+  margin-left: 30%;
+  height:400px
+}
+
+.btnsConta{
+  align-items: baseline;
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
+
+.btnsConta button{
+  border-style: none;
+  color: aliceblue;
+  border-radius: 10px;
+  width: 100px;
+  background: tomato;
+  height: 30px;
+}
+
+.btnsConta p{
+  color: tomato;
+}
