@@ -28,6 +28,7 @@ input{
 }
 
 .container{
+  align-items: center;
   background: #ffffff;
   box-sizing: border-box;
   display: flex;
@@ -36,11 +37,12 @@ input{
   margin-top: 10%;
   margin-bottom: 0;
   padding-top: 2rem;
-  padding-left: 15px;
-  padding-right: 15px;
+  padding-left: 15.5px;
+  padding-right: 15.5px;
   box-shadow: 5px 5px 5px 5px rgb(195, 191, 191, 0.8);
   text-align: center;
 }
+
 
 .boxInputs{
   color: #949292;
