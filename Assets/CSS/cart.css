@@ -1,0 +1,141 @@
+#modalExemplo{
+  background-color: #ffffff;
+  border: 0px solid black;
+  box-shadow:2px 2px 4px slategray;
+  display: flex;
+  flex-direction: column;
+  left: 725px;
+  top: 90px;
+  position: fixed;
+  width: 300px;
+  opacity: 0;
+  transition: all 200ms ease-out ;
+  z-index: 9;
+}
+
+#modalExemplo.visible{
+  opacity: 1;
+  transform: translateY(-50);
+}
+
+#nroItem{
+  background-color:  hsl(26, 100%, 55%);
+  border-radius:100%;
+  font-size: 13px;
+  color: #ffffff;
+  position: relative;
+  padding:0.1rem;
+  top:-15px;
+  left: 30px;
+  width: 10px;
+  height:15px;
+  opacity: 0;
+  transition: all 200ms ease-out ;
+  text-align: center;
+  z-index: 2;
+}
+
+#nroItem.visible{
+  opacity: 1;
+}
+
+.cartTitle{
+  font-size: 12px;
+  margin: .3rem;
+}
+
+.lineCart{
+  color: hsl(220, 14%, 75%);
+  max-width: 480px;
+}
+
+.cartPrincipal{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: .3rem;
+  line-height: .625rem;
+}
+
+.modalImage{
+  border-radius: 3px;
+  width: 25px;
+  opacity: 0;
+  transition: all 200ms ease-out ;
+}
+
+.modalImage.visible{
+  opacity: 1;
+}
+
+
+#modalTitle{
+  color: hsl(220, 14%, 75%);
+  font-size: 14px;
+  opacity: 0;
+  transition: all 200ms ease-out ;
+}
+
+#modalTitle.visible{
+  opacity: 1;
+}
+
+.mdTitle_price{
+  color: hsl(220, 14%, 75%);
+  flex-direction: column;
+  font-size: 12px;
+  margin-left: .6rem;
+  justify-content: center;
+  line-height: 0.125rem;
+}
+
+#deleteModal{
+  color: transparent;
+  border: 0;
+  cursor: pointer;
+  background-color:#ffffff;
+  background-image: url(./Assets/Images/icon-delete.svg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  width: 20px
+}
+
+#deleteModal:hover{
+  background-image:url(./Assets/Images/icon-delete2.svg);
+}
+
+#lblCart__sale{
+  color: hsl(220, 14%, 75%);
+  font-size: 12px;
+}
+
+#closeModal{
+  border: 0;
+  border-radius: 3px;
+  background-color: hsl(26, 100%, 55%);
+  color: #ffffff;
+  font-size: 8px;
+  font-weight: 500;
+  margin:15px;
+  max-width: 280px;
+  height: 20px;
+  transition: 200ms;
+}
+
+#closeModal:hover{
+  background-color: hsl(26, 100%, 44%);
+  font-size: 10px;
+}
+
+@media (max-width: 480px){
+  #modalExemplo{
+    left: 55px;
+    top: 83px;
+    width: 305px;
+  }
+
+  #nroItem{
+    left: 235px;
+  }
+  
+}

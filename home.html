@@ -4,27 +4,128 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./Assets/CSS/menuH.css" />
     <link rel="stylesheet" href="./Assets/CSS/main.css" />
+    <link rel="stylesheet" href="./Assets/CSS/style.css" />
+    <link rel="stylesheet" href="./Assets/CSS/home.css" />
+    <link rel="stylesheet" href="./Assets/CSS/cart.css" />
+    <link rel="stylesheet" href="./Assets/CSS/counterS.css" />
     <title>Delivery</title>
   </head>
-  <header>
-    <img src="./Assets/Images/clogo.gif" alt="" />
-    <nav role="navigation">
-      <div id="menuToggle">
-        <input type="checkbox" />
-        <span></span>
-        <span></span>
-        <span></span>
-        <ul id="menuT">
-          <a href="#"><li>Home</li></a>
-          <a href="#"><li>Login</li></a>
-          <a href="#"><li>Empresa</li></a>
-          <a href="#"><li>Contact</li></a>
-        </ul>
-      </div>
-    </nav>
-  </header>
-  <main></main>
-  <body></body>
+
+  <body>
+    <div class="containerXX">
+      <header>
+        <img class="logo" src="./Assets/Images/clogo.gif" alt="" />
+        <h2>Seja Bem Vindo</h2>
+        <label id="lblName" for=""><h2>João Silva</h2></label>
+        <div class="CartBox">
+          <label id="nroItem">0</label>
+          <button
+            type="button"
+            class="btn-primary"
+            data-toggle="modal"
+            data-target="#modalExemplo"
+            onclick="openModal()"
+          >
+            <img src="./Assets/Images/icon-cart.svg" />
+          </button>
+        </div>
+        <div id="modalExemplo">
+          <h2 class="cartTitle">Cart</h2>
+          <hr class="lineCart" />
+          <div class="cartPrincipal">
+            <ul>
+              <img
+                class="modalImage"
+                src="./images/image-product-1-thumbnail.jpg"
+              />
+            </ul>
+            <ul mdTitle_price>
+              <li>
+                <label id="modalTitle">Fall Limited Edition Sneakers</label>
+              </li>
+              <li>
+                <label id="lblCart__sale">Your Cart is empty</label>
+              </li>
+            </ul>
+            <ul>
+              <button id="deleteModal" onclick="clearM()">XX</button>
+            </ul>
+          </div>
+          <button id="closeModal" onclick="closeModal()">Checkout</button>
+        </div>
+        <div class="LogOut">
+          <button id="btnLogOut">
+            <a href="index.html"
+              ><img src="./Assets/Images/logout-svgrepo-com.svg" alt=""
+            /></a>
+          </button>
+        </div>
+      </header>
+      <!--==============================================Main==============================-->
+      <hr />
+      <main>
+        <h2><p>Tamanho da Pizza</p></h2>
+        <div class="tamanho">
+          <ul>
+            <p>P</p>
+            <input type="radio" name="" id="pequeno" />
+          </ul>
+          <ul>
+            <p>M</p>
+            <input type="radio" name="" id="medio" />
+          </ul>
+          <ul>
+            <p>G</p>
+            <input type="radio" name="" id="grande" />
+          </ul>
+        </div>
+        <!--=====================================Fim Do Tamanho==============================-->
+        <p id="title qtde"><h3>Quantos Sabores?</h3></p>
+        <div class="itemUnity">
+          <ul class="counterPrice">
+            <!--<li><img src="./images/icon-minus.svg" alt="" /></li> -->
+            <li><button class="btnMinus" onclick="decrement()">-</button></li>
+            <li><label id="lbQtde" for="">0</label></li>
+            <!--<li><img src="./images/icon-plus.svg" alt="" /></li> -->
+            <li><button class="btnPlus" onclick="increment()">+</button></li>
+          </ul>
+          <ul>
+            <li>
+              <button class="btnCart" onclick="productSale()">
+                <img src="./Assets/Images/iconCartWhite.png" />
+                Add to cart
+              </button>
+            </li>
+          </ul>
+        </div>
+        <p id="title item"><h3>Sabores?</h3></p>
+        <div class="pizzaSabor">
+          <label id="lblSabor" for="">Atum</label>
+          <label id="lblobs" for="">Atum e Cebola</label>
+          <label id="lblSabor__valor"for="">R$30,00</label>
+        </div> 
+        <div class="pizzaSabor">
+          <label id="lblSabor" for="">Calabresa</label>
+          <label id="lblobs" for="">Calabresa e Cebola</label>
+          <label id="lblSabor__valor"for="">R$30,00</label>
+        </div>
+        <div class="pizzaSabor">
+          <label id="lblSabor" for="">Marguerita</label>
+          <label id="lblobs" for="">Atum e Cebola</label>
+          <label id="lblSabor__valor"for="">R$30,00</label>
+        </div>   
+        <div class="pizzaSabor">
+          <label id="lblSabor" for="">Portuguesa</label>
+          <label id="lblobs" for="">Mussarela, Presunto, Ovo e Cebola</label>
+          <label id="lblSabor__valor"for="">R$30,00</label>
+        </div>
+        <div class="pizzaSabor">
+          <label id="lblSabor" for="">Mussarela</label>
+          <label id="lblobs" for="">Quijo Mussarela</label>
+          <label id="lblSabor__valor"for="">R$30,00</label>
+        </div>      
+      </main>
+    </div>
+  </body>
 </html>
