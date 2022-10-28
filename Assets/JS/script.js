@@ -10,3 +10,16 @@ otherCheckbox.onchange = function () {
     otherText.style.visibility = 'hidden'
   }
 }
+
+////=================================Button
+
+const totaItem = document.querySelectorAll('#lblSabor')
+
+function mostraResultado() {
+  let contador = 0
+
+  while (contador < totaItem) {
+    contador = contador++
+    console.log(totaItem)
+  }
+}

@@ -71,3 +71,22 @@ main div{
   display: flex;
   justify-content: center;
 }
+
+/*==================================BotoesPedido======*/
+
+.btnPedido{
+  display: flex;
+  gap:1rem;
+}
+
+.btnPedido button{
+  background-color: crimson;
+  border-style: none;
+  color: #ffffff;
+  height:30px;
+  width:120px
+}
+
+.btnPedido button:hover{
+  background-color: tomato;
+}
