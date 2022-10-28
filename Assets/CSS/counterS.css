@@ -1,92 +1,118 @@
-.itemUnity{
-  display: flex;
-  flex-direction: row;
-  margin-bottom: 2rem;
-  margin-top: 1rem;
-}
 
-.counterPrice{
-  border-radius: 10px;
-  display: flex;
-  flex-direction: row;
-  background-color: hsl(233, 11%, 85%);
-  /*padding-left:1.3rem;*/
-  width: 110px;
-  height: 30px;
-}
-
-.itemUnity{
-  align-items: center;
-}
-
-
-.itemUnity li{
-  margin-top: 0.23rem;
-  margin-left:  1rem;
-}
-
-
-.btnMinus{
-  border: 0;
-  color:transparent;
-  cursor: pointer;
-  background-color:hsl(233, 11%, 85%);
-  background-image: url(../Images/icon-minus.svg);
-  background-repeat: no-repeat;
-  background-position: center;
-  width: 20px
-}
-
-.btnPlus{
-  border: 0;
-  color: transparent;
-  cursor: pointer;
-  background-color:hsl(233, 11%, 85%);
-  background-image: url(../Images/icon-plus.svg);
-  background-repeat: no-repeat;
-  background-position: center;
-  width: 20px
-}
-.btnCart{
-  align-items: center;
-  background-color:  hsl(26, 100%, 55%);
-  border: 0;
-  border-radius: 10px;
-  color: #ffffff;
-  cursor: pointer;
-  display: flex;
-  justify-content: center;
-  margin-left: 0.5rem;
-  width:  200px;
-  height: 30px;
-}
-
-.btnCart:hover{
-  opacity: 0.8;
-}
-
-.btnCart img{
-  margin-right: .6rem;
-  width: 20px;
-}
-
-#title{
+#title-item {
+  color: red;
+  margin-top: 20px;
   margin:1rem;
+}
+
+.pizzaT{
+ margin-bottom: 10px;
+
+}
+
+
+fieldset {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  padding-right: 0.8rem;
+  text-align: left;
+  width: 360px;
+}
+
+legend {
+color: red;
+}
+
+.pizzaT input{
+  height: 20px;
+  width: 20px;
+  background-color: red;
+  border-radius: 2px;
+  gap: 1rem;
+  margin:5px;
 }
 
 .pizzaSabor {
   align-items: flex-start;
   box-sizing: border-box;
   display: flex;
-  flex-direction: column;
   justify-content: flex-start;
-  gap:0.5rem;
+  gap: 4rem;
   margin: 1rem;
   padding: 1rem;
   width:360px;
   box-shadow: 1px 1px 1px 1px rgb(195, 191, 191, 0.8);
   text-align: left;
 
+}
+
+.pizzaSabor__txt{
+  display: flex;
+  flex-direction: column;
+}
+/*===========================================CheckBox=================================*/
+.pizzaSabor__chbox{
+  display: block;
+  position: absolute;
+  left:620px;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 22px;
+}
+
+.pizzaSabor__chbox input{
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 15px;
+  width: 20px;
+  left: 150px;
+  z-index: 2;
+}
+
+/* Criar o checkbox customizado */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 150px;
+  height: 25px;
+  width: 25px;
+  background-color: #eee;
+  border-radius: 2px;
+}
+
+/* Adicionar uma cor de fundo cinza ao passar o mouse */
+.pizzaSabor__chbox input ~ .checkmark {
+  background-color: #ccc;
+}
+
+/* Quando o checkbox é clicado, adicionar um fundo rosa */
+.pizzaSabor__chbox input:checked ~ .checkmark {
+  background-color: #ff0a54;
+}
+
+/* Criar o ícone de check, escondido quando não estiver selecionado */
+.pizzaSabor__chbox .checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+/* Exibir o ícone quando selecionado */
+.pizzaSabor__chbox input:checked ~ .checkmark:after {
+  display: block;
 }
 
 #lblobs{
