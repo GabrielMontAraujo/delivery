@@ -13,13 +13,10 @@ otherCheckbox.onchange = function () {
 
 ////=================================Button
 
-const totaItem = document.querySelectorAll('#lblSabor')
-
 function mostraResultado() {
   let contador = 0
 
-  while (contador < totaItem) {
-    contador = contador++
-    console.log(totaItem)
-  }
+  const totaItem = document.querySelectorAll('.pizzasabor').length
+
+  console.log(totaItem)
 }
