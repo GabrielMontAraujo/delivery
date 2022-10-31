@@ -1,10 +1,9 @@
+// const url = "https://api-menupizzaria.herokuapp.com";
 const url = "http://localhost:8080";
 
 async function login() {
     const email = document.getElementById("Mail");
     const password = document.getElementById("pass");
-    console.log(email.value)
-    console.log(password.value)
     if(email.value && password.value) {
         const response = await fetch(`${url}/user/login`, {
             method: "POST",
@@ -15,11 +14,14 @@ async function login() {
             mode: "cors",
             body: JSON.stringify({email: email.value, password: password.value}),
         });
+
         const message = await response.text();
         if(response.status === 200) {
+            const splitId = message.split(":")[1];
+            const id = splitId.split(",");
+            localStorage.setItem("clientId", id[0]);
             window.location.href = "home.html";
         } else {
-            // const msg = message.split(":")[1].replace("}", "");
             alert(message);
         }
     }
