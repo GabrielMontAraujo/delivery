@@ -11,12 +11,34 @@ otherCheckbox.onchange = function () {
   }
 }
 
+function checked(id, flavor, price) {
+  const arrayChecked = {
+    "flavor": document.getElementById(`${flavor}`).innerText,
+    "price": document.getElementById(`${price}`).innerText,
+  };
+  return arrayChecked;
+}
+
 ////=================================Button
 
 function mostraResultado() {
-  let contador = 0
+  const response = [];
+  const checkedIds = ["checkedAtum", "checkedCalabresa", "checkedMarguerita", "checkedPortuguesa", "checkedMussarela"];
 
-  const totaItem = document.querySelectorAll('.pizzasabor').length
-
-  console.log(totaItem)
+  for (const i of checkedIds) {
+    if(document.getElementById(`${i}`).checked){
+      console.log(i)
+      if(i === "checkedAtum")
+        response.push(checked("checkedAtum", "atum", "valorAtum"));
+      if(i === "checkedCalabresa")
+        response.push(checked("checkedCalabresa", "calabresa", "valorCalabresa"));
+      if(i === "checkedMarguerita")
+        response.push(checked("checkedMarguerita", "marguerita", "valorMarguerita"));
+      if(i === "checkedPortuguesa")
+        response.push(checked("checkedPortuguesa", "portuguesa", "valorPortuguesa"));
+      if(i === "checkedMussarela")
+        response.push(checked("checkedMussarela", "mussarela", "valorMussarela"));
+    }
+  }
+  console.log(response);
 }
