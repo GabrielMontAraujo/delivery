@@ -82,9 +82,12 @@ function closeModal(e) {
 /// *** Pedido ======================
 
 function checked(id, flavor, price) {
+  let array = document.getElementById(`${price}`).innerText.split("$")
+  array = array[1].replace(",", ".")
+  array = parseFloat(array)
   const arrayChecked = {
     flavor: document.getElementById(`${flavor}`).innerText,
-    price: document.getElementById(`${price}`).innerText
+    price: array
   }
   return arrayChecked
 }
@@ -125,6 +128,6 @@ function mostraResultado() {
     }
   }
   productSale()
-  console.log(NroLabel)
+  // console.log(NroLabel)
   console.log(response)
 }
