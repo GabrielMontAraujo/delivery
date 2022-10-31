@@ -23,10 +23,9 @@ async function cadastro() {
                     password: password.value,
                 }),
             });
-            console.log(response)
             const message = await response.json();
             if(response.status === 201) {
-                window.location.href = "home.html";
+                window.location.href = "login.html";
             } else {
                 alert(message.mensage);
             }
