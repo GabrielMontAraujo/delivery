@@ -11,13 +11,28 @@ otherCheckbox.onchange = function () {
   }
 }
 
+// =======** Tamanho da Pizza **===============================
+
+function tamPizza(id) {
+  if(id === "pequena"){
+    document.getElementById("media").checked = false
+    document.getElementById("grande").checked = false
+  } else if( id === "media"){
+    document.getElementById("pequena").checked = false
+    document.getElementById("grande").checked = false
+  } else {
+    document.getElementById("pequena").checked = false
+    document.getElementById("media").checked = false
+  }
+}
+
 // =======** nro de pedidos no carrinho **===============================
 
 var data = 0
 
 function productSale() {
   data = data + 1
-  const NroLabel = ''
+  let NroLabel = ''
   sendToCart()
   if (data > 0) {
     NroLabel = data
