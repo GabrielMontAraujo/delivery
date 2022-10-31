@@ -143,6 +143,7 @@ function mostraResultado() {
     }
   }
   productSale()
+  console.log(localStorage.getItem("clientId"))
   // console.log(NroLabel)
   console.log(response)
 }
