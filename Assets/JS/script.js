@@ -117,3 +117,8 @@ async function cadastroPedido(pedidos) {
   }
      
 }
+
+function logout() {
+  localStorage.removeItem("clientId");
+  localStorage.removeItem("clientName");
+}
