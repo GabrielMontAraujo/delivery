@@ -38,4 +38,12 @@ async function pagamento() {
         alert(message.mensage);
     }
        
-  }
+}
+
+function logout() {
+    localStorage.removeItem("clientId");
+    localStorage.removeItem("clientName");
+    localStorage.removeItem("product")
+    localStorage.removeItem("total")
+    localStorage.removeItem("orderId")
+}
