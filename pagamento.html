@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./Assets/CSS/main.css" />
+    <link rel="stylesheet" href="./Assets/CSS/style.css" />
+    <link rel="stylesheet" href="./Assets/CSS/home.css" />
+    <link rel="stylesheet" href="./Assets/CSS/cart.css" />
+    <link rel="stylesheet" href="./Assets/CSS/counterS.css" />
+    <link rel="stylesheet" href="./Assets/CSS/pagamento.css">
+    <title>Delivery-Pagamento</title>
+  </head>
+
+  <body>
+    <div class="containerXX">
+      <header>
+        <img class="logo" src="./Assets/Images/clogo.gif" alt="" />
+        <h2>Seja Bem Vindo</h2>
+        <label id="lblName" for=""></label>
+        
+        <div class="LogOut">
+          <button id="btnLogOut">
+            <a href="index.htm"
+              ><img src="./Assets/Images/logout-svgrepo-com.svg" alt=""
+            /></a>
+          </button>
+        </div>
+      </header>
+      <!--==============================================Main==============================-->
+      <hr />
+      <main>
+        <h2>Pagamento</h2>
+        <div class="container-Pagamento">
+          <ul>
+            <p class="titlePag">1 pizza de:</p>
+          </ul>
+          <ul class="itemSabor">
+            <label for="" class="lblPag__sabores">sabor</label> 
+            <!--================== *** os innerHTMl com os labels deverão ser colocados aqui *** ========-->
+          </ul>
+          <hr class="lnValor">
+          <ul class="boxValor__pagamento">
+            <label for="" id="totalPagar">R$</label>
+            <!-- ======================== *** Aqui é colocado com o innerHTMl o label do valor total *** =========-->
+            <label for="" id="totalPagar">,00</label>
+          </ul>
+        </div>
+        <button id="btnPagamento">Pagar</button>
+      </main>
+  </body>

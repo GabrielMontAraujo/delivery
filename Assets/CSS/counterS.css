@@ -42,7 +42,8 @@ color: red;
   gap: 4rem;
   margin: 1rem;
   padding: 1rem;
-  width:360px;
+  max-width:300px;
+  width:100%;
   box-shadow: 1px 1px 1px 1px rgb(195, 191, 191, 0.8);
   text-align: left;
 
@@ -118,4 +119,27 @@ color: red;
 .lblobs{
   color:#b3afaf ;
   font-size: 11px;
+}
+
+@media (max-width: 600px){
+  fieldset {
+    width: 75%;
+  }
+
+  .pizzaSabor {
+    width:75%;
+  }
+
+  .pizzaSabor__chbox{
+    left:310px;
+  }
+
+  .pizzaSabor__chbox input{
+    left:75px;
+  }
+
+  .checkmark {
+    left: 75px;
+  }
+
 }

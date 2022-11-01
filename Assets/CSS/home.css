@@ -83,10 +83,28 @@ main div{
   background-color: crimson;
   border-style: none;
   color: #ffffff;
-  height:30px;
-  width:120px
+  height:35px;
+  width:220px
 }
 
 .btnPedido button:hover{
   background-color: tomato;
+}
+
+@media (max-width: 600px){
+
+  header{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .logo{
+    width: 70%;
+  }
+
+  hr{
+    width: 210px;
+  }
+ 
+
 }

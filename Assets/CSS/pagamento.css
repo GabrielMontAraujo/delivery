@@ -1,0 +1,41 @@
+.container-Pagamento{
+  align-items: flex-start;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 1rem;
+  margin: 1rem;
+  padding: 1rem;
+  max-width:300px;
+  width:100%;
+  box-shadow: 1px 1px 1px 1px rgb(195, 191, 191, 0.8);
+  text-align: left;
+}
+
+.lnValor{
+  color: black;
+  opacity: 0.9;
+  width: 100px;
+}
+
+.itemSabor{
+  color: darkgrey;
+  font-size: 14px;
+}
+
+.boxValor__pagamento{
+  color: crimson;
+  display: flex;
+  flex-direction: row;
+}
+
+#btnPagamento{
+  border-style: none;
+  background-color: crimson;
+  color: #FFFFFF;
+  font-weight: bold;
+  width: 150px;
+  height: 30px;
+
+}
