@@ -1,3 +1,9 @@
+// =======** Setar nome de usuário **==========================
+// const element = document.querySelector("#lblName");
+const nome = localStorage.getItem("clientName")
+
+document.getElementById("lblName").innerHTML = `<h2>${nome}</h2>`
+
 var otherCheckbox = document.querySelector('entrada [valor = "outro"]')
 var otherText = document.querySelector('input [id = "otherValue"]')
 otherText.style.visibility = 'oculto'
@@ -10,6 +16,7 @@ otherCheckbox.onchange = function () {
     otherText.style.visibility = 'hidden'
   }
 }
+
 
 // =======** Tamanho da Pizza **===============================
 
