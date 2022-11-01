@@ -121,7 +121,7 @@ color: red;
   font-size: 11px;
 }
 
-@media (max-width: 600px){
+@media (max-width: 680px){
   fieldset {
     width: 75%;
   }
@@ -131,7 +131,7 @@ color: red;
   }
 
   .pizzaSabor__chbox{
-    left:310px;
+    left:210px;
   }
 
   .pizzaSabor__chbox input{
