@@ -1,80 +1,36 @@
+// =======** Setar nome de usuário **==========================
+// const element = document.querySelector("#lblName");
+const nome = localStorage.getItem("clientName")
+
+document.getElementById("lblName").innerHTML = `<h2>${nome}</h2>`
+
 var otherCheckbox = document.querySelector('entrada [valor = "outro"]')
 var otherText = document.querySelector('input [id = "otherValue"]')
-otherText.style.visibility = 'oculto'
+// otherText.style.visibility = 'oculto'
 
-otherCheckbox.onchange = function () {
-  if (otherCheckbox.checked) {
-    otherText.style.visibility = 'visible'
-    otherText.value = ''
+// otherCheckbox.onchange = function () {
+//   if (otherCheckbox.checked) {
+//     otherText.style.visibility = 'visible'
+//     otherText.value = ''
+//   } else {
+//     otherText.style.visibility = 'hidden'
+//   }
+// }
+
+
+// =======** Tamanho da Pizza **===============================
+
+function tamPizza(id) {
+  if(id === "pequena"){
+    document.getElementById("media").checked = false
+    document.getElementById("grande").checked = false
+  } else if( id === "media"){
+    document.getElementById("pequena").checked = false
+    document.getElementById("grande").checked = false
   } else {
-    otherText.style.visibility = 'hidden'
+    document.getElementById("pequena").checked = false
+    document.getElementById("media").checked = false
   }
-}
-
-// =======** nro de pedidos no carrinho **===============================
-
-var data = 0
-
-function productSale() {
-  data = data + 1
-  const NroLabel = ''
-  sendToCart()
-  if (data > 0) {
-    NroLabel = data
-    document.getElementById('nroItem').innerText = NroLabel
-    document.getElementById('lblCart__sale').innerText = data + response
-  }
-  empty()
-}
-
-function sendToCart(e) {
-  const itemNro = document.querySelector('#nroItem')
-  if (data > 0) {
-    itemNro.classList.add('visible')
-    full()
-  } else {
-    empty()
-  }
-}
-
-function cart() {
-  if (data == 0) {
-    empty
-  }
-}
-
-function empty(e) {
-  const emptyCart = document.querySelector('.modalImage')
-  emptyCart.classList.add('visible')
-
-  const emptyCart2 = document.querySelector('#modalTitle')
-  emptyCart2.classList.add('visible')
-}
-
-function full(e) {
-  const fullCart = document.querySelector('.modalImage')
-  fullCart.classList.remove('visible')
-
-  const fullCart2 = document.querySelector('#modalTitle')
-  fullCart2.classList.remove('visible')
-}
-
-// ======== *** * *** Janela Modal do Carrinho *** * *** ========
-
-const btnModal = document.querySelector('.btn-primary')
-btnModal.addEventListener('click', openModal)
-
-function openModal(e) {
-  const modalEl = document.querySelector('#modalExemplo')
-  modalEl.classList.add('visible')
-  cart()
-}
-const btnClose = document.querySelectorAll('#closeModal')
-btnClose.forEach(fechaE1 => fechaE1.addEventListener('click', closeModal))
-
-function closeModal(e) {
-  const modalEl = document.querySelector('#modalExemplo')
-  modalEl.classList.remove('visible')
 }
 
 // *** Fim Da Janela Modal do Carrinho *** =============
@@ -82,9 +38,12 @@ function closeModal(e) {
 /// *** Pedido ======================
 
 function checked(id, flavor, price) {
+  let array = document.getElementById(`${price}`).innerText.split("$")
+  array = array[1].replace(",", ".")
+  array = parseFloat(array)
   const arrayChecked = {
     flavor: document.getElementById(`${flavor}`).innerText,
-    price: document.getElementById(`${price}`).innerText
+    price: array
   }
   return arrayChecked
 }
@@ -124,7 +83,33 @@ function mostraResultado() {
         )
     }
   }
-  productSale()
-  console.log(NroLabel)
-  console.log(response)
+  cadastroPedido(response);
+}
+
+
+async function cadastroPedido(pedidos) {
+  // const url = "http://localhost:8080";
+  const url = "https://api-menupizzaria.herokuapp.com";
+
+  const clientId = localStorage.getItem("clientId");
+  
+  const response = await fetch(`${url}/order/register/${clientId}`, {
+      method: "POST",
+      headers: {
+          "Accept": "application/json",
+          "Content-Type": "application/json"
+      },
+      mode: "cors",
+      body: JSON.stringify({
+        "orderStatus": "WAITING_PAYMENT",
+        "products": pedidos
+      }),
+  });
+  const message = await response.json();
+  if(response.status === 201) {
+      window.location.href = "pagamento.html";
+  } else {
+      alert(message.mensage);
+  }
+     
 }

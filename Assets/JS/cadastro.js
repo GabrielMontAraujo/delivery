@@ -1,4 +1,5 @@
-const url = "http://localhost:8080";
+// const url = "http://localhost:8080";
+const url = "https://api-menupizzaria.herokuapp.com";
 
 async function cadastro() {
     const name = document.getElementById("NomeSobrenome");
@@ -23,10 +24,9 @@ async function cadastro() {
                     password: password.value,
                 }),
             });
-            console.log(response)
             const message = await response.json();
             if(response.status === 201) {
-                window.location.href = "home.html";
+                window.location.href = "index.htm";
             } else {
                 alert(message.mensage);
             }
