@@ -15,14 +15,14 @@ async function login() {
             body: JSON.stringify({email: email.value, password: password.value}),
         });
 
-        const message = await response.text();
         if(response.status === 200) {
-            const splitId = message.split(":")[1];
-            const id = splitId.split(",");
-            localStorage.setItem("clientId", id[0]);
+            const message = await response.json();
+            localStorage.setItem("clientId", message["id"]);
+            localStorage.setItem("clientName", message["name"]);
             window.location.href = "home.html";
         } else {
-            alert(message);
+            const resp = await response.text();
+            alert(resp);
         }
     }
 }
