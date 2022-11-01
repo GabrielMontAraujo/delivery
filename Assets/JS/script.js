@@ -107,7 +107,11 @@ async function cadastroPedido(pedidos) {
   });
   const message = await response.json();
   if(response.status === 201) {
-      window.location.href = "pagamento.html";
+    localStorage.setItem("orderId", message["id"]);
+    const sabores = pedidos.map((sabor) => sabor["flavor"]);
+    localStorage.setItem("product", sabores);
+    localStorage.setItem("total", message["total"]);
+    window.location.href = "pagamento.html";
   } else {
       alert(message.mensage);
   }
