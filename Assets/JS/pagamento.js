@@ -1,12 +1,18 @@
-// Lista de sabores.
+// =======** Setar nome de usuário **==========================
+const nome = localStorage.getItem("clientName")
+
+document.getElementById("lblName").innerHTML = `<h2>${nome}</h2>`
+
+// =======** Lista de sabores **===============================
 const sabores = localStorage.getItem("product");
 document.getElementById("sabores").innerText = sabores + ".";
 
-// Total da pizza
+// =======** Total da pizza **=================================
 const total = localStorage.getItem("total");
 const totalNumber = parseFloat(total).toFixed(2).replace(".", ",");
 document.getElementById("totalPagar").innerText= "R$ " + totalNumber;
 
+// =======** Função Pagamento **===============================
 async function pagamento() {
     // const url = "http://localhost:8080";
     const url = "https://api-menupizzaria.herokuapp.com";
