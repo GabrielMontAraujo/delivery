@@ -1,5 +1,5 @@
-// const url = "https://api-menupizzaria.herokuapp.com";
-const url = "http://localhost:8080";
+const url = "https://api-menupizzaria.herokuapp.com";
+// const url = "http://localhost:8080";
 
 async function login() {
     const email = document.getElementById("Mail");
