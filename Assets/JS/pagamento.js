@@ -3,6 +3,10 @@ const nome = localStorage.getItem("clientName")
 
 document.getElementById("lblName").innerHTML = `<h2>${nome}</h2>`
 
+// =======** Tamanho **===============================
+const tamanho = localStorage.getItem("tamanho");
+document.getElementById("tam").innerText = tamanho;
+
 // =======** Lista de sabores **===============================
 const sabores = localStorage.getItem("product");
 document.getElementById("sabores").innerText = sabores + ".";
@@ -46,4 +50,5 @@ function logout() {
     localStorage.removeItem("product")
     localStorage.removeItem("total")
     localStorage.removeItem("orderId")
+    localStorage.removeItem("tamanho")
 }
