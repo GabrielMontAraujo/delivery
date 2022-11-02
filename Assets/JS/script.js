@@ -24,13 +24,25 @@ function tamPizza(id) {
   if(id === "pequena"){
     document.getElementById("media").checked = false
     document.getElementById("grande").checked = false
+    mudarPreco("15,00", "9,00", "15,00", "10,00", "18,00");
   } else if( id === "media"){
     document.getElementById("pequena").checked = false
     document.getElementById("grande").checked = false
+    mudarPreco("23,00", "18,00", "28,00", "20,00", "30,00");
   } else {
     document.getElementById("pequena").checked = false
     document.getElementById("media").checked = false
+    mudarPreco("33,00", "35,00", "40,00", "35,00", "42,00");
   }
+}
+
+// =======** Mudar preço da Pizza **============================
+function mudarPreco(valAtum, valCalabresa, valMarguerita, valPortuguesa, valMussarela) {
+  document.getElementById("valorAtum").innerText = `R$${valAtum}`;
+  document.getElementById("valorCalabresa").innerText = `R$${valCalabresa}`;
+  document.getElementById("valorMarguerita").innerText = `R$${valMarguerita}`;
+  document.getElementById("valorPortuguesa").innerText = `R$${valPortuguesa}`;
+  document.getElementById("valorMussarela").innerText = `R$${valMussarela}`;
 }
 
 // *** Fim Da Janela Modal do Carrinho *** =============
