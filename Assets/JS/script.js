@@ -4,6 +4,8 @@ const nome = localStorage.getItem("clientName")
 
 document.getElementById("lblName").innerHTML = `<h2>${nome}</h2>`
 
+localStorage.setItem("tamanho", "pequena");
+
 var otherCheckbox = document.querySelector('entrada [valor = "outro"]')
 var otherText = document.querySelector('input [id = "otherValue"]')
 // otherText.style.visibility = 'oculto'
