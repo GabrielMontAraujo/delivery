@@ -4,6 +4,8 @@ const nome = localStorage.getItem("clientName")
 
 document.getElementById("lblName").innerHTML = `<h2>${nome}</h2>`
 
+localStorage.setItem("tamanho", "pequena");
+
 var otherCheckbox = document.querySelector('entrada [valor = "outro"]')
 var otherText = document.querySelector('input [id = "otherValue"]')
 // otherText.style.visibility = 'oculto'
@@ -21,16 +23,29 @@ var otherText = document.querySelector('input [id = "otherValue"]')
 // =======** Tamanho da Pizza **===============================
 
 function tamPizza(id) {
+  localStorage.setItem("tamanho", id);
   if(id === "pequena"){
     document.getElementById("media").checked = false
     document.getElementById("grande").checked = false
+    mudarPreco("15,00", "9,00", "15,00", "10,00", "18,00");
   } else if( id === "media"){
     document.getElementById("pequena").checked = false
     document.getElementById("grande").checked = false
+    mudarPreco("23,00", "18,00", "28,00", "20,00", "30,00");
   } else {
     document.getElementById("pequena").checked = false
     document.getElementById("media").checked = false
+    mudarPreco("33,00", "35,00", "40,00", "35,00", "42,00");
   }
+}
+
+// =======** Mudar preço da Pizza **============================
+function mudarPreco(valAtum, valCalabresa, valMarguerita, valPortuguesa, valMussarela) {
+  document.getElementById("valorAtum").innerText = `R$${valAtum}`;
+  document.getElementById("valorCalabresa").innerText = `R$${valCalabresa}`;
+  document.getElementById("valorMarguerita").innerText = `R$${valMarguerita}`;
+  document.getElementById("valorPortuguesa").innerText = `R$${valPortuguesa}`;
+  document.getElementById("valorMussarela").innerText = `R$${valMussarela}`;
 }
 
 // *** Fim Da Janela Modal do Carrinho *** =============
@@ -107,9 +122,19 @@ async function cadastroPedido(pedidos) {
   });
   const message = await response.json();
   if(response.status === 201) {
-      window.location.href = "pagamento.html";
+    localStorage.setItem("orderId", message["id"]);
+    const sabores = pedidos.map((sabor) => sabor["flavor"]);
+    localStorage.setItem("product", sabores);
+    localStorage.setItem("total", message["total"]);
+    window.location.href = "pagamento.html";
   } else {
       alert(message.mensage);
   }
      
+}
+
+function logout() {
+  localStorage.removeItem("clientId");
+  localStorage.removeItem("clientName");
+  localStorage.removeItem("tamanho");
 }
