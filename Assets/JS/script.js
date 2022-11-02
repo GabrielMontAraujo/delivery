@@ -21,6 +21,7 @@ var otherText = document.querySelector('input [id = "otherValue"]')
 // =======** Tamanho da Pizza **===============================
 
 function tamPizza(id) {
+  localStorage.setItem("tamanho", id);
   if(id === "pequena"){
     document.getElementById("media").checked = false
     document.getElementById("grande").checked = false
@@ -133,4 +134,5 @@ async function cadastroPedido(pedidos) {
 function logout() {
   localStorage.removeItem("clientId");
   localStorage.removeItem("clientName");
+  localStorage.removeItem("tamanho");
 }
